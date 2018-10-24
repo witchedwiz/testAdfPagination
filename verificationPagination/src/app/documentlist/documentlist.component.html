@@ -1,3 +1,4 @@
+<!--
 <adf-toolbar>
   <adf-toolbar-title>
     <adf-breadcrumb
@@ -25,3 +26,25 @@
 </adf-document-list>
 
 <adf-file-uploading-dialog></adf-file-uploading-dialog>
+
+-->
+
+<adf-document-list #documentList [node]="localNodePaging"  >
+        <data-columns>
+            <data-column key="$thumbnail" type="image" [sortable]="false" title=""></data-column>
+            <data-column title="Nome Documento" key="name" sortable="true" >
+            </data-column>
+            <data-column title="Creato da" key="createdByUser.displayName" sortable="true" >
+            </data-column>
+            <data-column title="Creata il" key="createdAt" type="date" format="dd/MM/yyyy" sortable="true" >
+            </data-column>
+        </data-columns>
+        <empty-folder-content>
+            <ng-template>
+                <h3>Non esistono documenti in questa cartella.</h3>
+            </ng-template>
+        </empty-folder-content>
+    </adf-document-list>
+    <adf-pagination [target]="documentList">
+    </adf-pagination>
+    </div>
