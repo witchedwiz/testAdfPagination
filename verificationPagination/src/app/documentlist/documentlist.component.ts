@@ -48,13 +48,14 @@ performRepresentation()
     this.performOperation(25, 0, 'cm:modified', false).
     then(data => {
       this.localNodePaging = data;
+	this.searchReady = true;
     }, error => {
       console.error(error);
     });
   }
 
 ngOnInit() {
-    this.doStuff();
+    this.performRepresentation();
   }
 
 performOperation(maxItemsProvided: number, skipCountProvided: number, fieldSort: string, ascendingSort: boolean): Promise<NodePaging> {

@@ -28,7 +28,7 @@
 <adf-file-uploading-dialog></adf-file-uploading-dialog>
 
 -->
-
+<div *ngIf="searchReady" >
 <adf-document-list #documentList [node]="localNodePaging"  >
         <data-columns>
             <data-column key="$thumbnail" type="image" [sortable]="false" title=""></data-column>
@@ -47,4 +47,4 @@
     </adf-document-list>
     <adf-pagination [target]="documentList">
     </adf-pagination>
-    </div>
+</div>
